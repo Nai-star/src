@@ -33,7 +33,7 @@ body{
     grid-template-rows: repeat(3, 1fr);     
     gap: 2%; 
     margin: 5% auto;    
-    border-radius: 1%;          
+    border-radius: 6%;          
 }
 
 .cuadro div {

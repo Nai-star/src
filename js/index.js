@@ -70,11 +70,13 @@ function verificarGanador() {
     for (let i = 0; i < casillas.length; i++) {
      casillas[i].textContent = ""
     }
-     turno ="💫"
-     juegoActivo = true
-     alerta = false
-     
+     turno = "💫"
+     tablero =["","","","","","","","",""]
 
+     juegoActivo = true
+     alerta= false
+     
+      
      
     })
 
