@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="estilos/index2.css">
 </head>
 <body>
- ¡Bienvenido a gato!
-
- <div class="cuadro">
+ <div id="contenedorPrincipal">
+    <h1>¡Bienvenido a gato multijugador!</h1>
+    <div class="cuadro">
     <div class="casilla"></div>
     <div class="casilla"></div>
     <div class="casilla"></div>
@@ -21,12 +21,26 @@
     <div class="casilla"></div>
  </div>
  
- <button id="btnReiniciar">Reiniciar</button>
+ <button id="btnReiniciar">Reiniciar</button> <br>
+ <a href="index.html"><button>Pagina de inicio</button></a>
+
  <div id="listaGanadores"></div>
 
  <div class="estrellas"></div>
 
+ <div id="resultados">
+    <h1> Historial de partidas</h1>
+    <ul id="historial"></ul>
+ </div>
 
- <script src="js/index.js"></script>
+ <div id="contador">
+    <h1>Contador</h1>
+  <p>💫: <span id="puntosEstrella">0</span></p>
+  <p>🌙: <span id="puntosLuna">0</span></p>
+ </div>
+ 
+</div>
+
+ <script src="js/index2.js"></script>
 </body>
 </html>

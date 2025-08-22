@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "malibu";
+    src: url(super_malibu/Super\ Malibu.ttf);
+    color: aliceblue;
+    
+}
+
+body{
+    text-align: center;   
+    font-family: "malibu";
+    
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat; 
+    font-size: 50px;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364, #5c2a9d, #ff6ec4, #7873f5);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cuadro{
+    width: 30%;
+    aspect-ratio: 1/1;
+    background-color:rgba(255, 255, 255, 0.3);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  
+    grid-template-rows: repeat(3, 1fr);     
+    gap: 2%; 
+    margin: 5% auto;    
+    border-radius: 6%;          
+}
+
+.cuadro div {
+    background-color: rgba(173, 216, 230, 0.5);
+    border: 2px solid black;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 5vw;   /* tamaño de X y O proporcional al tablero */
+    font-weight: bold;
+    border: 0.5% solid black; 
+   border-radius: 4%;
+}
+
+
+
+
+button {
+  font: inherit;
+  background-color: #f0f0f0;
+  border: 0;
+  color: #242424;
+  border-radius: 0.5em;
+  font-size: 1.35rem;
+  padding: 0.375em 1em;
+  font-weight: 600;
+  text-shadow: 0 0.0625em 0 #fff;
+  box-shadow: inset 0 0.0625em 0 0 #f4f4f4, 0 0.0625em 0 0 #efefef,
+    0 0.125em 0 0 #ececec, 0 0.25em 0 0 #e0e0e0, 0 0.3125em 0 0 #dedede,
+    0 0.375em 0 0 #dcdcdc, 0 0.425em 0 0 #cacaca, 0 0.425em 0.5em 0 #cecece;
+  transition: 0.15s ease;
+  cursor: pointer;
+}
+button:active {
+  translate: 0 0.225em;
+  box-shadow: inset 0 0.03em 0 0 #f4f4f4, 0 0.03em 0 0 #efefef,
+    0 0.0625em 0 0 #ececec, 0 0.125em 0 0 #e0e0e0, 0 0.125em 0 0 #dedede,
+    0 0.2em 0 0 #dcdcdc, 0 0.225em 0 0 #cacaca, 0 0.225em 0.375em 0 #cecece;
+}
+
+/* Contenedor */
+.estrellas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Estrella */
+.estrella {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #fff, 0 0 20px #fffb91, 0 0 40px #ffd500;
+  animation: fall linear forwards;
+}
+
+/* Rastro de la estrella */
+.estrella::after {
+  content: '';
+  position: absolute;
+  top: -80px; /* arriba de la estrella */
+  left: 50%;
+  width: 2px;
+  height: 0; /* empieza pequeño */
+  background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0));
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: rastro 0.5s forwards;
+  animation-delay: 0.1s; /* aparece un poco después del puntito */
+}
+
+/* Animación de caída de la estrella */
+@keyframes fall {
+  0% { transform: translate(0, 0); opacity: 1; }
+  100% { transform: translate(0, 100vh); opacity: 0; }
+}
+
+/* Animación del rastro */
+@keyframes rastro {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    height: 80px; /* se extiende hacia abajo */
+    opacity: 1;
+  }
+}

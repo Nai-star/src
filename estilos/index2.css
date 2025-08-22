@@ -6,9 +6,8 @@
 }
 
 body{
-    text-align: center;
+    text-align: center;   
     font-family: "malibu";
-    
     background-size: cover;       
     background-position: center;  
     background-repeat: no-repeat; 
@@ -16,7 +15,7 @@ body{
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364, #5c2a9d, #ff6ec4, #7873f5);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
-
+    font-weight: bold; 
     color: whitesmoke;
     display: flex;
     flex-direction: column;
@@ -37,7 +36,7 @@ body{
 
 .cuadro div {
     background-color: rgba(173, 216, 230, 0.5);
-    border: 2px solid black;   
+    border: 1% solid black;   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,5 +117,33 @@ button:active {
   0% { transform: translateY(-10px); opacity: 0.8; }
   100% { transform: translateY(100vh); opacity: 0; }
 }
+#resultados{
+    position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+  padding: 10px;
+  border-radius: 8px;
+  }
+
+#contador{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 8px;  
+
+ }
+
+
 
 
