@@ -1,7 +1,7 @@
 @font-face {
     font-family: "malibu";
     src: url(super_malibu/Super\ Malibu.ttf);
-    color: aliceblue;
+    
     
 }
 
@@ -11,7 +11,7 @@ body{
     background-size: cover;       
     background-position: center;  
     background-repeat: no-repeat; 
-    font-size: 80%;
+    font-size: 70%;
     background: linear-gradient(135deg, #203a43, #2c5364, #5c2a9d, #ff6ec4, #7873f5);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
