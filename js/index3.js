@@ -1,11 +1,10 @@
 const casillas = document.getElementsByClassName("casilla");
-const btnReiniciar = document.getElementById("boton");
+const btnReiniciar = document.getElementById("btnReiniciar");
 const contenedorEstrellas = document.getElementsByClassName("estrellas")[0];
 const totalEstrellas = 100; // cantidad de estrellas
-const historial = document.getElementById("historial")
-const contador = document.getElementById("contador")
-const contadorEstrella = document.getElementById("puntosEstrella")
-const contadorLuna = document.getElementById("puntosLuna")
+const historial = document.getElementById("historial");
+const contadorEstrella = document.getElementById("puntosEstrella");
+const contadorLuna = document.getElementById("puntosLuna");
 
 let tablero = ["","","","","","","","",""];
 let ganadores = [ // combos para ganar
@@ -19,11 +18,13 @@ let ganadores = [ // combos para ganar
   [2,4,6],
 ];
 
-let personaJuega = "X";
-let botJuega = "O";
+let personaJuega = "💫"; // Emoji de estrella
+let botJuega = "🌙"; // Emoji de luna
 let juegoActivo = true;
+let puntosEstrella = 0;
+let puntosLuna = 0;
 
-// se ve la x
+//  Click en casillas
 for (let i = 0; i < casillas.length; i++) {
   casillas[i].addEventListener("click", function () {
     if (casillas[i].textContent === "" && juegoActivo) {
@@ -34,28 +35,12 @@ for (let i = 0; i < casillas.length; i++) {
       let ganador = verificarGanador();
       if (ganador) {
         juegoActivo = false;
+        actualizarPuntos(ganador);
+        agregarHistorial(ganador);
         setTimeout(() => alert("¡Ganó " + ganador + "!"), 100);
         return;
       }
-      // Se muestra el historial de las ganadas
-        const li = document.createElement("li");
-       li.textContent = "¡Ganó " + ganador + "!";
-        historial.appendChild(li);
-        setTimeout(function() {
-        alerta = false;
-        }, 500); 
 
-         if (ganador === "💫") {
-        puntosEstrella++;
-       } else if (ganador === "🌙") {
-        puntosLuna++;
-        
-       }
-
-       actualizarMarcador()
-       
-
-      // Verifica empate
       if (!tablero.includes("")) {
         juegoActivo = false;
         setTimeout(() => alert("¡Empate!"), 100);
@@ -68,17 +53,7 @@ for (let i = 0; i < casillas.length; i++) {
   });
 }
 
-// para ver el ganador
-function verificarGanador() {
-  for (let combo of ganadores) {
-    if (tablero[combo[0]] !== "" && combo.every(i => tablero[i] === tablero[combo[0]])) {
-      return tablero[combo[0]];
-    }
-  }
-  return null;
-}
-
-// ---- Bot ----
+//  Bot 
 function bot() {
   if (!juegoActivo) return;
 
@@ -97,6 +72,8 @@ function bot() {
   let ganador = verificarGanador();
   if (ganador) {
     juegoActivo = false;
+    actualizarPuntos(ganador);
+    agregarHistorial(ganador);
     setTimeout(() => alert("¡Ganó " + ganador + "!"), 100);
     return;
   }
@@ -108,11 +85,49 @@ function bot() {
   }
 }
 
-// ---- Estrellas animadas ----
-document.addEventListener("DOMContentLoaded", () => {
-  for (let i = 0; i < totalEstrellas; i++) {
-    crearEstrella();
+// Verificar ganador 
+function verificarGanador() {
+  for (let combo of ganadores) {
+    if (tablero[combo[0]] !== "" && combo.every(i => tablero[i] === tablero[combo[0]])) {
+      return tablero[combo[0]];
+    }
   }
+  return null;
+}
+
+// Actualizar puntos
+function actualizarPuntos(ganador) {
+  if (ganador === personaJuega) puntosEstrella++;
+  if (ganador === botJuega) puntosLuna++;
+  contadorEstrella.textContent = puntosEstrella;
+  contadorLuna.textContent = puntosLuna;
+
+  localStorage.setItem("puntosEstrella", puntosEstrella);
+  localStorage.setItem("puntosLuna", puntosLuna);
+}
+
+// Agregar al historial 
+function agregarHistorial(ganador) {
+  const li = document.createElement("li");
+  li.textContent = "¡Ganó " + ganador + "!";
+  historial.appendChild(li);
+}
+
+// reincia el juego
+btnReiniciar.addEventListener("click", function() {
+for (let i = 0; i < casillas.length; i++) {
+     casillas[i].textContent = ""
+    }
+     personaJuega = "💫"
+     tablero =["","","","","","","","",""]
+
+     juegoActivo = true
+     
+    })
+
+// estrellas fugases
+document.addEventListener("DOMContentLoaded", () => {
+  for (let i = 0; i < totalEstrellas; i++) crearEstrella();
 
   function crearEstrella() {
     const estrella = document.createElement("div");

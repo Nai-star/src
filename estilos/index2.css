@@ -11,8 +11,8 @@ body{
     background-size: cover;       
     background-position: center;  
     background-repeat: no-repeat; 
-    font-size: 50px;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364, #5c2a9d, #ff6ec4, #7873f5);
+    font-size: 80%;
+    background: linear-gradient(135deg, #203a43, #2c5364, #5c2a9d, #ff6ec4, #7873f5);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     font-weight: bold; 
@@ -23,7 +23,7 @@ body{
     align-items: center;
 }
 .cuadro{
-    width: 30%;
+    width: 60%;
     aspect-ratio: 1/1;
     background-color:rgba(255, 255, 255, 0.3);
     display: grid;
@@ -41,7 +41,7 @@ body{
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: 5vw;   /* tamaño de X y O proporcional al tablero */
+    font-size: 2.5vw;   /* tamaño de X y O proporcional al tablero */
     font-weight: bold;
     border: 0.5% solid black; 
    border-radius: 4%;
@@ -56,7 +56,7 @@ button {
   border: 0;
   color: #242424;
   border-radius: 0.5em;
-  font-size: 1.35rem;
+  font-size: .50rem;
   padding: 0.375em 1em;
   font-weight: 600;
   text-shadow: 0 0.0625em 0 #fff;
@@ -118,7 +118,7 @@ button:active {
   100% { transform: translateY(100vh); opacity: 0; }
 }
 #resultados{
-    position: fixed;
+  position: fixed;
   top: 20px;
   left: 20px;
   display: flex;

@@ -58,7 +58,8 @@ for (let i = 0; i < casillas.length; i++) {
         puntosEstrella++;
        } else if (ganador === "🌙") {
         puntosLuna++;
-        
+        localStorage.setItem("puntosEstrella", puntosEstrella);
+          localStorage.setItem("puntosLuna", puntosLuna);
        }
 
        actualizarMarcador()
@@ -107,10 +108,7 @@ function verificarGanador() {
      tablero =["","","","","","","","",""]
 
      juegoActivo = true
-     alerta= false
-     
-      
-     
+     alerta = false
     })
       
    

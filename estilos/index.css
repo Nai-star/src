@@ -1,6 +1,5 @@
 body{
-    background-image:url(https://media1.tenor.com/m/qP3daFoTi2QAAAAC/nika-special.gif);
-    background-size: cover;
+    background-image:url("https://images6.alphacoders.com/725/thumb-1920-725814.png");
     background-position: center;
     margin: 0;
     padding: 0;
@@ -9,6 +8,15 @@ body{
     font-family:"malibu" ;
     text-align: center;
     color: aliceblue;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background: #000
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://images6.alphacoders.com/725/thumb-1920-725814.png") 
+    no-repeat center center/cover;
+    
+    
 }
 @font-face {
     font-family: "malibu";

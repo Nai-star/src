@@ -6,17 +6,14 @@
 }
 
 body{
-    text-align: center;   
-    font-family: "malibu";
-    
-    background-size: cover;       
-    background-position: center;  
-    background-repeat: no-repeat; 
-    font-size: 50px;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364, #5c2a9d, #ff6ec4, #7873f5);
+     text-align: center;   
+    font-family: "malibu";      
+    background-position: center; 
+    font-size: 70%;
+    background: linear-gradient(135deg, #203a43, #2c5364, #5c2a9d, #ff6ec4, #7873f5);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
-
+    font-weight: bold; 
     color: whitesmoke;
     display: flex;
     flex-direction: column;
@@ -24,7 +21,7 @@ body{
     align-items: center;
 }
 .cuadro{
-    width: 30%;
+    width: 60%;
     aspect-ratio: 1/1;
     background-color:rgba(255, 255, 255, 0.3);
     display: grid;
@@ -32,17 +29,17 @@ body{
     grid-template-rows: repeat(3, 1fr);     
     gap: 2%; 
     margin: 5% auto;    
-    border-radius: 6%;          
+    border-radius: 6%;   
 }
 
 .cuadro div {
     background-color: rgba(173, 216, 230, 0.5);
-    border: 2px solid black;   
+    border: 1% solid black;   
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: 5vw;   /* tamaño de X y O proporcional al tablero */
+    font-size: 2.5vw;   /* tamaño de X y O proporcional al tablero */
     font-weight: bold;
     border: 0.5% solid black; 
    border-radius: 4%;
@@ -129,3 +126,31 @@ button:active {
     opacity: 1;
   }
 }
+
+#resultados{
+    position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+  padding: 10px;
+  border-radius: 8px;
+  }
+
+#contador{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 8px;  
+
+ }
+ 
